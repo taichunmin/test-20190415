@@ -3,7 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "dev": "yarn stop; yarn rmlog; yarn watch && yarn logs",
+    "eslint-ci": "eslint .",
+    "eslint": "eslint --fix .",
+    "logs": "pm2 logs test-20190415 --lines 150",
+    "rmlog": "rm ./logs/*.log",
+    "start": "pm2 start",
+    "stop": "pm2 del test-20190415 || true",
+    "watch": "yarn start --watch"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
