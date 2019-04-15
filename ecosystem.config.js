@@ -1,5 +1,5 @@
 module.exports = {
-  apps : [{
+  apps: [{
     name: 'test-20190415',
     script: 'bin/www',
 
@@ -17,7 +17,7 @@ module.exports = {
     env_production: {
       NODE_ENV: 'production'
     }
-  }],
+  }]
 
   // deploy : {
   //   production : {
@@ -29,4 +29,4 @@ module.exports = {
   //     'post-deploy' : 'yarn && pm2 reload ecosystem.config.js --env production'
   //   }
   // }
-};
+}
