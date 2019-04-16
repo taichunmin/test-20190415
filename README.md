@@ -1,5 +1,7 @@
 # test-20190415
 
+嘗試把 express 整合 vue-cli 的 watch 模式測試
+
 ## Project setup
 ```
 yarn install
@@ -7,23 +9,15 @@ yarn install
 
 ### Compiles and hot-reloads for development
 ```
-yarn run serve
+yarn dev
 ```
 
 ### Compiles and minifies for production
 ```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
+yarn build
 ```
 
 ### Lints and fixes files
 ```
-yarn run lint
+yarn eslint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
