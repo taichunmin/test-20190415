@@ -4,16 +4,14 @@
   "private": true,
   "scripts": {
     "build": "vue-cli-service build",
-    "dev": "yarn stop; yarn rmlog; yarn watch && yarn logs",
-    "eslint-ci": "eslint .",
-    "eslint": "eslint --fix .",
-    "lint": "vue-cli-service lint",
-    "logs": "pm2 logs test-20190415 --lines 150",
+    "dev": "yarn stop; yarn rmlog; concurrently \"yarn start --watch && yarn logs\" \"yarn build --watch\"",
+    "eslint": "eslint --fix . && vue-cli-service lint",
+    "eslint-ci": "eslint . && vue-cli-service lint --no-fix",
+    "logs": "pm2 logs app --lines 150",
     "rmlog": "rm ./logs/*.log",
-    "serve": "vue-cli-service serve",
     "start": "pm2 start",
-    "stop": "pm2 del test-20190415 || true",
-    "watch": "yarn start --watch"
+    "stop": "pm2 del all || true",
+    "vue-serve": "vue-cli-service serve"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -29,6 +27,7 @@
     "@vue/cli-service": "^3.6.0",
     "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.0.1",
+    "concurrently": "^4.1.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",

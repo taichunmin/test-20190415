@@ -1,6 +1,6 @@
 module.exports = {
   apps: [{
-    name: 'test-20190415',
+    name: 'app',
     script: 'bin/www',
 
     // Options reference: https://pm2.io/doc/en/runtime/reference/ecosystem-file/
@@ -10,9 +10,18 @@ module.exports = {
     autorestart: true,
     watch: false,
     max_memory_restart: '1G',
+    ignore_watch: [
+      '.git',
+      'bin',
+      'dist',
+      'logs',
+      'node_modules',
+      'public',
+      'src'
+    ],
     env: {
       NODE_ENV: 'development',
-      DEBUG: 'test-20190415:*'
+      DEBUG: 'app:*'
     },
     env_production: {
       NODE_ENV: 'production'
